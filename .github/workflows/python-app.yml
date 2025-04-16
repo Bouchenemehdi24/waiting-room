@@ -9,8 +9,6 @@ env:
 
 permissions:
   contents: write
-  actions/checkout@v2: write
-  actions/cache@v2: write
 
 jobs:
   build:
@@ -27,10 +25,17 @@ jobs:
         python-version: ${{ env.PYTHON_VERSION }}
         
     - name: Cache Python dependencies
+      id: cache-dependencies
+      if: always()
       uses: actions/cache@v2
       with:
         path: ./.cache/pip
         key: ${{ runner.os }}-python-${{ env.PYTHON_VERSION }}-deps
+      
+    - name: Cache Python dependencies - post
+      if: always()
+      run: |
+        echo "Cache key: ${{ steps.cache-dependencies.outputs.cache-hit }}"
         
     - name: Install dependencies
       run: |
