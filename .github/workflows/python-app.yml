@@ -7,6 +7,11 @@ on:
 env:
   PYTHON_VERSION: 3.7
 
+permissions:
+  contents: write
+  actions/checkout@v2: write
+  actions/cache@v2: write
+
 jobs:
   build:
     name: Build Windows EXE
