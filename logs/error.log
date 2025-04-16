@@ -1,0 +1,155 @@
+2025-04-16 01:17:41,381 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: no such table: main.users_old_roles
+2025-04-16 01:17:41,399 - database - ERROR - [database.py:47] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+2025-04-16 01:17:41,418 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:17:41,419 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:17:41,434 - __main__ - ERROR - [app.py:1665] - Failed to register patient: bouckalwi
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 1656, in register_patient_direct
+    self.db.add_visit(patient_id, self.current_user['user_id'])
+  File "E:\Waiting-room\database.py", line 181, in add_visit
+    self.add_audit_log(user_id, "add_visit", f"Patient ID: {patient_id}, Visit ID: {visit_id}")
+  File "E:\Waiting-room\database.py", line 163, in add_audit_log
+    conn.commit()
+  File "C:\Users\Mehdi\Anaconda3\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "E:\Waiting-room\database.py", line 48, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:19:41,682 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: no such table: main.users_old_roles
+2025-04-16 01:19:41,683 - database - ERROR - [database.py:47] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+2025-04-16 01:19:41,688 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:19:41,690 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:19:41,691 - __main__ - ERROR - [app.py:1665] - Failed to register patient: bouarkwa
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 1656, in register_patient_direct
+    self.db.add_visit(patient_id, self.current_user['user_id'])
+  File "E:\Waiting-room\database.py", line 191, in add_visit
+    self.add_audit_log(user_id, "add_visit", f"Patient ID: {patient_id}, Visit ID: {visit_id}")
+  File "E:\Waiting-room\database.py", line 163, in add_audit_log
+    conn.commit()
+  File "C:\Users\Mehdi\Anaconda3\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "E:\Waiting-room\database.py", line 48, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:22:01,564 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: no such table: main.users_old_roles
+2025-04-16 01:22:01,565 - database - ERROR - [database.py:47] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+2025-04-16 01:22:01,567 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:22:01,571 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:22:01,572 - __main__ - ERROR - [app.py:1665] - Failed to register patient: vavi
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 162, in add_audit_log
+    """, (user_id, action, now, details))
+sqlite3.OperationalError: no such table: main.users_old_roles
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 1656, in register_patient_direct
+    self.db.add_visit(patient_id, self.current_user['user_id'])
+  File "E:\Waiting-room\database.py", line 183, in add_visit
+    self.add_audit_log(user_id, "add_visit", f"Patient ID: {patient_id}, Visit ID: {visit_id}")
+  File "E:\Waiting-room\database.py", line 163, in add_audit_log
+    conn.commit()
+  File "C:\Users\Mehdi\Anaconda3\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "E:\Waiting-room\database.py", line 48, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such table: main.users_old_roles
+2025-04-16 01:31:45,280 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: no such module: fts5
+2025-04-16 01:31:45,284 - database - ERROR - [database.py:47] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 139, in init_database
+    """)
+sqlite3.OperationalError: no such module: fts5
+2025-04-16 01:31:45,309 - __main__ - ERROR - [app.py:811] - Failed to initialize application
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 139, in init_database
+    """)
+sqlite3.OperationalError: no such module: fts5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 799, in __init__
+    self.db = DatabaseManager()
+  File "E:\Waiting-room\database.py", line 34, in __init__
+    self.init_database()
+  File "E:\Waiting-room\database.py", line 141, in init_database
+    self.logger.info("Database schema initialized/verified, indexes created/verified, and FTS setup.")
+  File "C:\Users\Mehdi\Anaconda3\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "E:\Waiting-room\database.py", line 48, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such module: fts5
+2025-04-16 01:43:13,790 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: table patients has no column named phone_number
+2025-04-16 01:43:13,791 - database - ERROR - [database.py:162] - Error adding patient layla
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 151, in add_patient
+    (name, phone_number, now)
+sqlite3.OperationalError: table patients has no column named phone_number
+2025-04-16 01:43:13,793 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: Failed to add patient: table patients has no column named phone_number
+2025-04-16 01:43:13,794 - __main__ - ERROR - [app.py:1705] - Failed to register patient: layla
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 151, in add_patient
+    (name, phone_number, now)
+sqlite3.OperationalError: table patients has no column named phone_number
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 1693, in register_patient_direct
+    patient_id = self.db.add_patient(name, phone_number=phone_number)
+  File "E:\Waiting-room\database.py", line 163, in add_patient
+    raise DatabaseOperationError(f"Failed to add patient: {str(e)}")
+database.DatabaseOperationError: Failed to add patient: table patients has no column named phone_number
+2025-04-16 01:54:28,239 - db_connection_pool - ERROR - [db_connection_pool.py:120] - Error with pooled connection: FOREIGN KEY constraint failed
+2025-04-16 01:54:28,240 - database - ERROR - [database.py:47] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 45, in get_connection
+    yield conn
+  File "app.py", line 947, in save_services
+    cursor.execute("DELETE FROM services")
+sqlite3.IntegrityError: FOREIGN KEY constraint failed

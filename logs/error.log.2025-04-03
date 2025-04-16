@@ -1,0 +1,251 @@
+2025-04-03 00:08:57,159 - database - ERROR - [database.py:41] - Database connection failed
+Traceback (most recent call last):
+  File "e:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "e:\Waiting-room\app.py", line 828, in remove_from_waiting
+    cursor.execute("""
+sqlite3.OperationalError: near "v": syntax error
+2025-04-03 00:08:57,170 - __main__ - ERROR - [app.py:845] - Error removing patient from waiting list: mncnc
+Traceback (most recent call last):
+  File "e:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "e:\Waiting-room\app.py", line 828, in remove_from_waiting
+    cursor.execute("""
+sqlite3.OperationalError: near "v": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 825, in remove_from_waiting
+    with self.db.get_connection() as conn:
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "e:\Waiting-room\database.py", line 42, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: near "v": syntax error
+2025-04-03 00:14:36,468 - root - ERROR - [app.py:1056] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 1053, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Waiting-room\app.py", line 281, in __init__
+    self.reports_manager = ReportsManager(self.db)  # Add this line
+                           ^^^^^^^^^^^^^^
+NameError: name 'ReportsManager' is not defined
+2025-04-03 00:14:58,339 - root - ERROR - [app.py:1056] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 1053, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Waiting-room\app.py", line 281, in __init__
+    self.reports_manager = ReportsManager(self.db)  # Add this line
+                           ^^^^^^^^^^^^^^
+NameError: name 'ReportsManager' is not defined
+2025-04-03 01:30:35,292 - root - ERROR - [app.py:1244] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 1241, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Waiting-room\app.py", line 483, in __init__
+    self.update_displays()
+  File "e:\Waiting-room\app.py", line 1135, in update_displays
+    current_time = datetime.datetime.now()
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+2025-04-03 01:30:50,943 - root - ERROR - [app.py:1244] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 1241, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Waiting-room\app.py", line 483, in __init__
+    self.update_displays()
+  File "e:\Waiting-room\app.py", line 1135, in update_displays
+    current_time = datetime.datetime.now()
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+2025-04-03 10:47:12,299 - root - ERROR - [app.py:1223] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1220, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 572, in __init__
+    self.setup_ui()
+  File "E:\Waiting-room\app.py", line 744, in setup_ui
+    self.create_info_section(right_panel)
+  File "E:\Waiting-room\app.py", line 899, in create_info_section
+    self.create_appointments_tab(appointments_frame)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'create_appointments_tab'
+2025-04-03 11:26:44,239 - root - ERROR - [app.py:1270] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1267, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 592, in __init__
+    self.update_displays()
+  File "E:\Waiting-room\app.py", line 1186, in update_displays
+    self.waiting_list.itemconfig(i, {'bg': self.wait_colors['long_wait']})
+                                           ^^^^^^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'wait_colors'
+2025-04-03 11:36:04,522 - root - ERROR - [app.py:1295] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "e:\Waiting-room\app.py", line 1292, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Waiting-room\app.py", line 576, in __init__
+    self.setup_styles()
+  File "e:\Waiting-room\app.py", line 602, in setup_styles
+    style = ttk.Style("clam")
+            ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\tkinter\ttk.py", line 347, in __init__
+    self.tk = self.master.tk
+              ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'tk'
+2025-04-03 11:38:13,208 - root - ERROR - [app.py:1296] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1293, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 579, in __init__
+    self.setup_ui()
+  File "E:\Waiting-room\app.py", line 756, in setup_ui
+    left_panel.grid(row=0, column=0, sticky="nsew", padx=(0, 10), pady=10)
+  File "C:\Program Files\Python311\Lib\tkinter\__init__.py", line 2549, in grid_configure
+    self.tk.call(
+_tkinter.TclError: cannot use geometry manager grid inside .!frame which already has slaves managed by pack
+2025-04-03 13:45:45,365 - database - ERROR - [database.py:41] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+2025-04-03 13:45:45,449 - __main__ - ERROR - [app.py:916] - Error updating appointment displays
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 885, in update_appointment_displays
+    with self.db.get_connection() as conn:
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "E:\Waiting-room\database.py", line 42, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such column: patient_name
+2025-04-03 13:48:20,056 - database - ERROR - [database.py:41] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+2025-04-03 13:48:20,070 - __main__ - ERROR - [app.py:916] - Error updating appointment displays
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 885, in update_appointment_displays
+    with self.db.get_connection() as conn:
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "E:\Waiting-room\database.py", line 42, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such column: patient_name
+2025-04-03 13:49:02,472 - database - ERROR - [database.py:41] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+2025-04-03 13:49:02,483 - __main__ - ERROR - [app.py:916] - Error updating appointment displays
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 39, in get_connection
+    yield conn
+  File "E:\Waiting-room\app.py", line 888, in update_appointment_displays
+    cursor.execute("""
+sqlite3.OperationalError: no such column: patient_name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 885, in update_appointment_displays
+    with self.db.get_connection() as conn:
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "E:\Waiting-room\database.py", line 42, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: no such column: patient_name
+2025-04-03 14:27:08,625 - root - ERROR - [app.py:1580] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1577, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 721, in __init__
+    self.update_displays()
+  File "E:\Waiting-room\app.py", line 1493, in update_displays
+    self.main_appointments_tree.delete(*self.main_appointments_tree.get_children())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'main_appointments_tree'
+2025-04-03 14:27:29,410 - root - ERROR - [app.py:1580] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1577, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 721, in __init__
+    self.update_displays()
+  File "E:\Waiting-room\app.py", line 1493, in update_displays
+    self.main_appointments_tree.delete(*self.main_appointments_tree.get_children())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'main_appointments_tree'
+2025-04-03 15:32:40,041 - root - ERROR - [app.py:1554] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 1551, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 740, in __init__
+    self.setup_styles()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'setup_styles'
+2025-04-03 23:22:22,597 - database - ERROR - [database.py:352] - Attempted to add appointment for non-existent patient: bouchene
+2025-04-03 23:32:57,916 - root - ERROR - [app.py:2110] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 2107, in <module>
+    app = DoctorsWaitingRoomApp(root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\app.py", line 956, in __init__
+    self.show_login()
+  File "E:\Waiting-room\app.py", line 971, in show_login
+    self.setup_application()
+  File "E:\Waiting-room\app.py", line 994, in setup_application
+    self.setup_styles()
+  File "E:\Waiting-room\app.py", line 894, in setup_styles
+    background=self.colors['primary'],
+               ^^^^^^^^^^^
+AttributeError: 'DoctorsWaitingRoomApp' object has no attribute 'colors'
+2025-04-03 23:52:28,361 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\reports.py", line 20, in get_financial_report
+    cursor.execute(f"""
+sqlite3.OperationalError: unrecognized token: "#"
+2025-04-03 23:52:30,027 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\reports.py", line 20, in get_financial_report
+    cursor.execute(f"""
+sqlite3.OperationalError: unrecognized token: "#"

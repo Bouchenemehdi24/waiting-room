@@ -1,0 +1,14 @@
+2025-04-14 16:07:22,201 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 362, in add_user
+    (username, password_hash, role)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.username
+2025-04-14 16:07:33,603 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 362, in add_user
+    (username, password_hash, role)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.username

@@ -1,0 +1,5 @@
+__version__ = '1.0.0'
+__app_name__ = 'Cabinet Medical'
+__description__ = 'Application de Gestion de Cabinet Medical'
+__author__ = 'Bouchene Med Mehdi'
+__company_name__ = 'None'

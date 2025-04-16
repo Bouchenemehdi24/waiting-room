@@ -1,0 +1,1 @@
+2025-04-06 17:23:55,815 - database - ERROR - [database.py:352] - Attempted to add appointment for non-existent patient: BBBB

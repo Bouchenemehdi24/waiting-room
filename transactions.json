@@ -1,0 +1,251 @@
+[
+    {
+        "date": "2025-04-02 23:11:57",
+        "patient": "KJK",
+        "services": [],
+        "amount": 0
+    },
+    {
+        "date": "2025-04-02 23:14:22",
+        "patient": "NMNMDNMNM",
+        "services": [
+            "Consultation",
+            "Radiographie",
+            "gg"
+        ],
+        "amount": 4330
+    },
+    {
+        "date": "2025-04-02 23:18:38",
+        "patient": "BOUC",
+        "services": [
+            "Consultation",
+            "EFR"
+        ],
+        "amount": 2500
+    },
+    {
+        "date": "2025-04-02 23:32:26",
+        "patient": "nmdnm",
+        "services": [
+            "Consultation",
+            "EFR",
+            "gg"
+        ],
+        "amount": 4830
+    },
+    {
+        "date": "2025-04-02 23:37:16",
+        "patient": "nxnmnmx",
+        "services": [
+            "Analyse de sang",
+            "Radiographie",
+            "EFR"
+        ],
+        "amount": 4500
+    },
+    {
+        "date": "2025-04-02 23:56:11",
+        "patient": "nmnmcnm",
+        "services": [
+            "Consultation",
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 3000
+    },
+    {
+        "date": "2025-04-03 00:05:06",
+        "patient": "bdjdjk",
+        "services": [
+            "Consultation",
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 3000
+    },
+    {
+        "date": "2025-04-03 00:23:38",
+        "patient": "nmmnnm",
+        "services": [
+            "Consultation",
+            "X-Ray"
+        ],
+        "amount": 2000
+    },
+    {
+        "date": "2025-04-03 00:27:42",
+        "patient": "bakaha",
+        "services": [
+            "Consultation",
+            "X-Ray"
+        ],
+        "amount": 2000
+    },
+    {
+        "date": "2025-04-03 00:32:16",
+        "patient": "jjjkjkjjk",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500
+    },
+    {
+        "date": "2025-04-03 00:37:56",
+        "patient": "nnnnm",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500
+    },
+    {
+        "date": "2025-04-03 00:49:52",
+        "patient": "nmnmmm",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 00:56:21",
+        "patient": "nnnmm",
+        "services": [
+            "Consultation"
+        ],
+        "amount": 500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 01:13:27",
+        "patient": "nnnn",
+        "services": [
+            "Consultation"
+        ],
+        "amount": 500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 10:50:01",
+        "patient": "nnnm",
+        "services": [
+            "Consultation",
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 3000,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 14:47:06",
+        "patient": "bouchene mohammed Mehdi",
+        "services": [
+            "Consultation",
+            "X-Ray"
+        ],
+        "amount": 2000,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 14:47:39",
+        "patient": "ghdhddhhd jjdjd",
+        "services": [
+            "Consultation",
+            "Blood Test"
+        ],
+        "amount": 1500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 15:17:17",
+        "patient": "nnndndn",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 15:38:44",
+        "patient": "bakha",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-03 19:50:53",
+        "patient": "bohdgdg",
+        "services": [
+            "Consultation",
+            "X-Ray"
+        ],
+        "amount": 2000,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-06 13:04:24",
+        "patient": "bakaha",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-06 13:05:40",
+        "patient": "AYED BK",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-06 13:15:25",
+        "patient": "gami",
+        "services": [
+            "X-Ray"
+        ],
+        "amount": 1500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-11 21:27:32",
+        "patient": "BOUCHENE",
+        "services": [
+            "Blood Test",
+            "X-Ray"
+        ],
+        "amount": 2500,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-11 22:58:40",
+        "patient": "BUGDGD",
+        "services": [
+            "Consultation",
+            "Test cutanee",
+            "X-Ray"
+        ],
+        "amount": 4000,
+        "checkout": true
+    },
+    {
+        "date": "2025-04-12 20:36:28",
+        "patient": "BOCUEHEN HHE",
+        "services": [
+            "Blood Test"
+        ],
+        "amount": 1000,
+        "checkout": true
+    }
+]

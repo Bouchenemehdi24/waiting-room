@@ -1,0 +1,1 @@
+2025-04-10 17:12:56,597 - database - ERROR - [database.py:352] - Attempted to add appointment for non-existent patient: BOUCHENE

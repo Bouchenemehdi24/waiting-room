@@ -1,0 +1,88 @@
+2025-04-13 13:12:48,504 - reports - ERROR - [reports_tab.py:149] - Error generating report
+Traceback (most recent call last):
+  File "E:\Waiting-room\reports_tab.py", line 138, in generate_report
+    data = self.reports_manager.get_financial_summary(start_date, end_date)
+AttributeError: 'ReportsManager' object has no attribute 'get_financial_summary'
+2025-04-13 13:12:57,183 - reports - ERROR - [reports_tab.py:149] - Error generating report
+Traceback (most recent call last):
+  File "E:\Waiting-room\reports_tab.py", line 138, in generate_report
+    data = self.reports_manager.get_financial_summary(start_date, end_date)
+AttributeError: 'ReportsManager' object has no attribute 'get_financial_summary'
+2025-04-13 13:12:58,378 - reports - ERROR - [reports_tab.py:149] - Error generating report
+Traceback (most recent call last):
+  File "E:\Waiting-room\reports_tab.py", line 138, in generate_report
+    data = self.reports_manager.get_financial_summary(start_date, end_date)
+AttributeError: 'ReportsManager' object has no attribute 'get_financial_summary'
+2025-04-13 13:12:59,458 - reports - ERROR - [reports_tab.py:149] - Error generating report
+Traceback (most recent call last):
+  File "E:\Waiting-room\reports_tab.py", line 142, in generate_report
+    data = self.reports_manager.get_patient_count(start_date, end_date)
+AttributeError: 'ReportsManager' object has no attribute 'get_patient_count'
+2025-04-13 13:13:01,826 - reports - ERROR - [reports_tab.py:149] - Error generating report
+Traceback (most recent call last):
+  File "E:\Waiting-room\reports_tab.py", line 138, in generate_report
+    data = self.reports_manager.get_financial_summary(start_date, end_date)
+AttributeError: 'ReportsManager' object has no attribute 'get_financial_summary'
+2025-04-13 13:38:44,877 - root - ERROR - [app.py:1851] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "app.py", line 1848, in <module>
+    app = DoctorsWaitingRoomApp(root)
+  File "app.py", line 675, in __init__
+    self.show_login()
+  File "app.py", line 690, in show_login
+    self.setup_application()
+  File "app.py", line 715, in setup_application
+    self.setup_ui()
+  File "app.py", line 855, in setup_ui
+    self.show_dashboard() # Show dashboard initially
+  File "app.py", line 987, in show_dashboard
+    btn = ttk.Button(actions_frame, text=f"{icon} {text}", command=cmd, style="Dashboard.TButton")
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\ttk.py", line 614, in __init__
+    Widget.__init__(self, master, "ttk::button", kw)
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\ttk.py", line 559, in __init__
+    tkinter.Widget.__init__(self, master, widgetname, kw=kw)
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\__init__.py", line 2299, in __init__
+    (widgetName, self._w) + extra + self._options(cnf))
+_tkinter.TclError: character U+1f465 is above the range (U+0000-U+FFFF) allowed by Tcl
+2025-04-13 14:18:57,306 - root - ERROR - [app.py:1851] - Unhandled exception occurred
+Traceback (most recent call last):
+  File "app.py", line 1848, in <module>
+    app = DoctorsWaitingRoomApp(root)
+  File "app.py", line 675, in __init__
+    self.show_login()
+  File "app.py", line 690, in show_login
+    self.setup_application()
+  File "app.py", line 715, in setup_application
+    self.setup_ui()
+  File "app.py", line 855, in setup_ui
+    self.show_dashboard() # Show dashboard initially
+  File "app.py", line 987, in show_dashboard
+    btn = ttk.Button(actions_frame, text=f"{icon} {text}", command=cmd, style="Dashboard.TButton")
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\ttk.py", line 614, in __init__
+    Widget.__init__(self, master, "ttk::button", kw)
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\ttk.py", line 559, in __init__
+    tkinter.Widget.__init__(self, master, widgetname, kw=kw)
+  File "C:\Users\Mehdi\Anaconda3\lib\tkinter\__init__.py", line 2299, in __init__
+    (widgetName, self._w) + extra + self._options(cnf))
+_tkinter.TclError: character U+1f4ca is above the range (U+0000-U+FFFF) allowed by Tcl
+2025-04-13 20:36:50,454 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 362, in add_user
+    (username, password_hash, role)
+sqlite3.IntegrityError: CHECK constraint failed: users
+2025-04-13 20:38:04,216 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 362, in add_user
+    (username, password_hash, role)
+sqlite3.IntegrityError: CHECK constraint failed: users
+2025-04-13 20:51:18,281 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 362, in add_user
+    (username, password_hash, role)
+sqlite3.IntegrityError: CHECK constraint failed: users

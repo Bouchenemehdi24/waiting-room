@@ -1,0 +1,31 @@
+2025-04-11 14:24:16,231 - database - ERROR - [database.py:352] - Attempted to add appointment for non-existent patient: jjjhj
+2025-04-11 21:24:46,532 - database - ERROR - [database.py:43] - Database connection failed
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 61, in init_database
+    cursor.executescript("""
+sqlite3.OperationalError: unrecognized token: "#"
+2025-04-11 21:24:46,534 - __main__ - ERROR - [app.py:696] - Failed to initialize application
+Traceback (most recent call last):
+  File "E:\Waiting-room\database.py", line 41, in get_connection
+    yield conn
+  File "E:\Waiting-room\database.py", line 61, in init_database
+    cursor.executescript("""
+sqlite3.OperationalError: unrecognized token: "#"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Waiting-room\app.py", line 684, in __init__
+    self.db = DatabaseManager()
+              ^^^^^^^^^^^^^^^^^
+  File "E:\Waiting-room\database.py", line 29, in __init__
+    self.init_database()
+  File "E:\Waiting-room\database.py", line 54, in init_database
+    with self.get_connection() as conn:
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "E:\Waiting-room\database.py", line 44, in get_connection
+    raise DatabaseConnectionError(f"Failed to connect: {str(e)}")
+database.DatabaseConnectionError: Failed to connect: unrecognized token: "#"

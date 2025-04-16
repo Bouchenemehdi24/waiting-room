@@ -1,0 +1,9 @@
+cx_Freeze>=6.11.1
+tkcalendar>=1.6.1
+babel>=2.9.1
+matplotlib>=3.5.0
+seaborn>=0.11.2
+pandas>=1.3.4
+numpy>=1.21.4
+pillow>=8.4.0
+mysql-connector-python
