@@ -11,6 +11,8 @@ from reports_tab import ReportsTab # Added import for the new tab class
 import logging
 from logging_config import setup_logging
 import locale
+import json  # Add at the top of app.py
+
 from babel.dates import format_date
 from tkcalendar import DateEntry
 
