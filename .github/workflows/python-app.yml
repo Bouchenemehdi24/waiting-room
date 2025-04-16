@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  PYTHON_VERSION: 3.7
+  PYTHON_VERSION: 3.9  # Updated from 3.7 to a more modern version
 
 permissions:
   contents: write
@@ -17,50 +17,100 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Updated to v3
       
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4  # Updated to v4
       with:
         python-version: ${{ env.PYTHON_VERSION }}
         
     - name: Cache Python dependencies
       id: cache-dependencies
-      if: always()
       uses: actions/cache@v3
       with:
         path: ./.cache/pip
         key: ${{ runner.os }}-python-${{ env.PYTHON_VERSION }}-deps
       
-    - name: Cache Python dependencies - post
-      if: always()
-      run: |
-        echo "Cache key: ${{ steps.cache-dependencies.outputs.cache-hit }}"
-        
     - name: Install dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install --user -r requirements.txt
         
     - name: Install PyInstaller
       run: |
         pip install pyinstaller
         
-    - name: Build EXE
+    - name: Build Application Directory
       run: |
-        pyinstaller --onefile --windowed app.py
+        pyinstaller --onedir --windowed --name MedicalOfficeApp --hidden-import babel.numbers --hidden-import babel.dates --hidden-import json --hidden-import sqlite3 --hidden-import logging app.py
         
-    - name: Upload artifact
+    - name: Download Inno Setup
+      run: |
+        curl -L -o innosetup.exe "https://files.jrsoftware.org/is/6/innosetup-6.2.2.exe"
+      shell: bash
+
+    - name: Install Inno Setup
+      run: |
+        ./innosetup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+        echo "C:\Program Files (x86)\Inno Setup 6" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      shell: powershell
+
+    - name: Create Inno Setup Script
+      run: |
+        echo [Setup] > installer.iss
+        echo AppName=Medical Office App >> installer.iss
+        echo AppVersion=1.0 >> installer.iss
+        echo DefaultDirName={autopf}\Medical Office App >> installer.iss
+        echo DefaultGroupName=Medical Office App >> installer.iss
+        echo OutputDir=.\dist >> installer.iss
+        echo OutputBaseFilename=MedicalOfficeSetup >> installer.iss
+        echo Compression=lzma >> installer.iss
+        echo SolidCompression=yes >> installer.iss
+        echo WizardStyle=modern >> installer.iss
+        echo UninstallDisplayIcon={app}\MedicalOfficeApp.exe >> installer.iss
+        echo "" >> installer.iss
+        echo [Languages] >> installer.iss
+        echo Name: "english"; MessagesFile: "compiler:Default.isl" >> installer.iss
+        echo "" >> installer.iss
+        echo [Tasks] >> installer.iss
+        echo Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked >> installer.iss
+        echo "" >> installer.iss
+        echo [Files] >> installer.iss
+        echo Source: "dist\MedicalOfficeApp\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs >> installer.iss
+        echo ; NOTE: Don't use "Flags: ignoreversion" on any shared system files >> installer.iss
+        echo "" >> installer.iss
+        echo [Icons] >> installer.iss
+        echo Name: "{group}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe" >> installer.iss
+        echo Name: "{group}\{cm:UninstallProgram,Medical Office App}"; Filename: "{uninstallexe}" >> installer.iss
+        echo Name: "{autodesktop}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe"; Tasks: desktopicon >> installer.iss
+        echo "" >> installer.iss
+        echo [Run] >> installer.iss
+        echo Filename: "{app}\MedicalOfficeApp.exe"; Description: "{cm:LaunchProgram,Medical Office App}"; Flags: nowait postinstall skipifsilent >> installer.iss
+      shell: cmd
+
+    - name: Compile Installer with Inno Setup
+      run: |
+        iscc installer.iss
+      shell: cmd
+
+    - name: Upload Installer Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: windows-exe
-        path: dist/
-        
+        name: windows-installer
+        path: dist/MedicalOfficeSetup.exe
+
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/MedicalOfficeSetup.exe
+      
     - name: Error handling and cleanup
-      if: job.status == 'failed'
+      if: failure()
       run: |
         echo "Build failed. Cleaning up..."
-        del /q /s /f dist\*
-        rmdir /s /q dist
+        if (Test-Path dist) { Remove-Item -Recurse -Force dist }
+      shell: powershell
         
     - name: Status report
       run: |
