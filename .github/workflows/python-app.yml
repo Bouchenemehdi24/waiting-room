@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  PYTHON_VERSION: 3.9  # Updated from 3.7 to a more modern version
+  PYTHON_VERSION: 3.9
 
 permissions:
   contents: write
@@ -17,10 +17,10 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Updated to v3
+      uses: actions/checkout@v3
       
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to v4
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ env.PYTHON_VERSION }}
         
@@ -57,35 +57,38 @@ jobs:
 
     - name: Create Inno Setup Script
       run: |
-        echo [Setup] > installer.iss
-        echo AppName=Medical Office App >> installer.iss
-        echo AppVersion=1.0 >> installer.iss
-        echo DefaultDirName={autopf}\Medical Office App >> installer.iss
-        echo DefaultGroupName=Medical Office App >> installer.iss
-        echo OutputDir=.\dist >> installer.iss
-        echo OutputBaseFilename=MedicalOfficeSetup >> installer.iss
-        echo Compression=lzma >> installer.iss
-        echo SolidCompression=yes >> installer.iss
-        echo WizardStyle=modern >> installer.iss
-        echo UninstallDisplayIcon={app}\MedicalOfficeApp.exe >> installer.iss
-        echo "" >> installer.iss
-        echo [Languages] >> installer.iss
-        echo Name: "english"; MessagesFile: "compiler:Default.isl" >> installer.iss
-        echo "" >> installer.iss
-        echo [Tasks] >> installer.iss
-        echo Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked >> installer.iss
-        echo "" >> installer.iss
-        echo [Files] >> installer.iss
-        echo Source: "dist\MedicalOfficeApp\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs >> installer.iss
-        echo ; NOTE: Don't use "Flags: ignoreversion" on any shared system files >> installer.iss
-        echo "" >> installer.iss
-        echo [Icons] >> installer.iss
-        echo Name: "{group}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe" >> installer.iss
-        echo Name: "{group}\{cm:UninstallProgram,Medical Office App}"; Filename: "{uninstallexe}" >> installer.iss
-        echo Name: "{autodesktop}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe"; Tasks: desktopicon >> installer.iss
-        echo "" >> installer.iss
-        echo [Run] >> installer.iss
-        echo Filename: "{app}\MedicalOfficeApp.exe"; Description: "{cm:LaunchProgram,Medical Office App}"; Flags: nowait postinstall skipifsilent >> installer.iss
+        @echo off
+        (
+          echo [Setup]
+          echo AppName=Medical Office App
+          echo AppVersion=1.0
+          echo DefaultDirName={autopf}\Medical Office App
+          echo DefaultGroupName=Medical Office App
+          echo OutputDir=.\dist
+          echo OutputBaseFilename=MedicalOfficeSetup
+          echo Compression=lzma
+          echo SolidCompression=yes
+          echo WizardStyle=modern
+          echo UninstallDisplayIcon={app}\MedicalOfficeApp.exe
+          echo.
+          echo [Languages]
+          echo Name: "english"; MessagesFile: "compiler:Default.isl"
+          echo.
+          echo [Tasks]
+          echo Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+          echo.
+          echo [Files]
+          echo Source: "dist\MedicalOfficeApp\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+          echo ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+          echo.
+          echo [Icons]
+          echo Name: "{group}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe"
+          echo Name: "{group}\{cm:UninstallProgram,Medical Office App}"; Filename: "{uninstallexe}"
+          echo Name: "{autodesktop}\Medical Office App"; Filename: "{app}\MedicalOfficeApp.exe"; Tasks: desktopicon
+          echo.
+          echo [Run]
+          echo Filename: "{app}\MedicalOfficeApp.exe"; Description: "{cm:LaunchProgram,Medical Office App}"; Flags: nowait postinstall skipifsilent
+        ) > installer.iss
       shell: cmd
 
     - name: Compile Installer with Inno Setup
