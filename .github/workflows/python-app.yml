@@ -27,7 +27,7 @@ jobs:
     - name: Cache Python dependencies
       id: cache-dependencies
       if: always()
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ./.cache/pip
         key: ${{ runner.os }}-python-${{ env.PYTHON_VERSION }}-deps
